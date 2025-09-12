@@ -40,6 +40,9 @@ class ElvisAI {
         this.saveBtn.addEventListener('click', () => this.saveTransformation());
         this.viewGalleryBtn.addEventListener('click', () => this.showGallery());
         this.closeGalleryBtn.addEventListener('click', () => this.hideGallery());
+        
+        // Add quick gallery button listener
+        document.getElementById('quick-gallery-btn').addEventListener('click', () => this.showGallery());
     }
     
     updateIntensityDisplay(event) {
@@ -220,12 +223,13 @@ class ElvisAI {
                     t.original_image_url,
                     t.elvis_image_url,
                     t.intensity,
-                    t.username,
                     t.created_at,
+                    u.username,
                     COUNT(v.id) as vote_count
                 FROM public.elvis_transformations t
+                JOIN public.user u ON t.user_id = u.id
                 LEFT JOIN public.transformation_votes v ON t.id = v.transformation_id
-                GROUP BY t.id, t.original_image_url, t.elvis_image_url, t.intensity, t.username, t.created_at
+                GROUP BY t.id, t.original_image_url, t.elvis_image_url, t.intensity, t.created_at, u.username
                 ORDER BY vote_count DESC, t.created_at DESC
             `);
             
