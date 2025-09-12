@@ -44,6 +44,18 @@
                 <input type="file" id="file-input" accept="image/*" class="hidden">
             </div>
 
+            <div class="intensity-control">
+                <label for="intensity-slider" class="slider-label">
+                    <span class="label-text">Kingification Intensity</span>
+                    <span id="intensity-value" class="intensity-value">50%</span>
+                </label>
+                <input type="range" id="intensity-slider" class="intensity-slider" min="1" max="100" value="50">
+                <div class="intensity-labels">
+                    <span>Subtle</span>
+                    <span>Full King</span>
+                </div>
+            </div>
+
             <button id="generate-btn" class="generate-btn hidden">
                 <span class="btn-text">Transform Into Elvis</span>
                 <span class="btn-icon">⚡</span>
@@ -53,6 +65,17 @@
                 <span class="btn-text">Capture Photo</span>
                 <span class="btn-icon">📸</span>
             </button>
+
+            <div class="action-buttons hidden" id="action-buttons">
+                <button id="save-transformation" class="secondary-btn">
+                    <span class="btn-icon">💾</span>
+                    <span class="btn-text">Save to Gallery</span>
+                </button>
+                <button id="view-gallery" class="secondary-btn">
+                    <span class="btn-icon">🏆</span>
+                    <span class="btn-text">View Leaderboard</span>
+                </button>
+            </div>
 
             <div class="info-cards">
                 <div class="card">
@@ -69,6 +92,18 @@
                 </div>
             </div>
         </main>
+
+        <section id="gallery-section" class="gallery-section hidden">
+            <div class="gallery-header">
+                <h2>👑 Elvis Transformation Leaderboard</h2>
+                <button id="close-gallery" class="close-btn">✕</button>
+            </div>
+            <div id="gallery-loading" class="gallery-loading hidden">
+                <div class="spinner"></div>
+                <p>Loading the King's court...</p>
+            </div>
+            <div id="gallery-grid" class="gallery-grid"></div>
+        </section>
 
         <footer class="footer">
             <p>"Thank you, thank you very much" - AI Elvis</p>

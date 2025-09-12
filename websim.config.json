@@ -1,0 +1,40 @@
+{
+  "database": {
+    "schema": {
+      "elvis_transformations": {
+        "id": {
+          "type": "uuid",
+          "description": "Unique identifier for the transformation"
+        },
+        "original_image_url": {
+          "type": "text",
+          "description": "URL of the original uploaded image"
+        },
+        "elvis_image_url": {
+          "type": "text",
+          "description": "URL of the Elvis transformation result"
+        },
+        "intensity": {
+          "type": "integer",
+          "description": "Kingification intensity level (1-100)"
+        },
+        "username": {
+          "type": "text",
+          "description": "Username of the person who created this transformation"
+        }
+      },
+      "transformation_votes": {
+        "id": {
+          "type": "text",
+          "description": "user_id + transformation_id for uniqueness"
+        },
+        "transformation_id": {
+          "type": "uuid",
+          "description": "ID of the transformation being voted on"
+        }
+      }
+    },
+    "instructions": "This database stores Elvis AI transformations and votes. Users can upload photos, transform them to Elvis with varying intensity levels, and vote on each other's transformations. The leaderboard ranks transformations by vote count."
+  }
+}
+
