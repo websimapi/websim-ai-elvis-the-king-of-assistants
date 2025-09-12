@@ -19,20 +19,39 @@
             <div class="image-container">
                 <div id="loading" class="loading hidden">
                     <div class="spinner"></div>
-                    <p>Generating the King... 🎸</p>
+                    <p>Transforming you into the King... 🎸</p>
                 </div>
                 <div id="image-placeholder" class="image-placeholder">
                     <div class="placeholder-content">
                         <div class="music-note">🎵</div>
-                        <p>Click below to see what I'd look like as Elvis!</p>
+                        <p>Upload a photo or take a selfie to become Elvis!</p>
                     </div>
                 </div>
                 <img id="elvis-image" class="elvis-image hidden" alt="AI as Elvis" />
+                <canvas id="camera-canvas" class="camera-canvas hidden"></canvas>
+                <video id="camera-video" class="camera-video hidden" autoplay playsinline></video>
             </div>
 
-            <button id="generate-btn" class="generate-btn">
-                <span class="btn-text">Transform Into The King</span>
+            <div class="input-options">
+                <button id="camera-btn" class="option-btn">
+                    <span class="btn-icon">📷</span>
+                    <span class="btn-text">Take Photo</span>
+                </button>
+                <button id="upload-btn" class="option-btn">
+                    <span class="btn-icon">📁</span>
+                    <span class="btn-text">Upload Photo</span>
+                </button>
+                <input type="file" id="file-input" accept="image/*" class="hidden">
+            </div>
+
+            <button id="generate-btn" class="generate-btn hidden">
+                <span class="btn-text">Transform Into Elvis</span>
                 <span class="btn-icon">⚡</span>
+            </button>
+
+            <button id="capture-btn" class="generate-btn hidden">
+                <span class="btn-text">Capture Photo</span>
+                <span class="btn-icon">📸</span>
             </button>
 
             <div class="info-cards">
@@ -60,4 +79,3 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
-
